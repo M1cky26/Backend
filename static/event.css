@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --main-font: 'Familjen Grotesk', sans-serif;
+    --main-color: #F5F7F8;
+    --login-color: #FFFEFE;
+    --home-color: #F7F6F2;
+    --member-color: #F9F5F2ff;
+    --event-color: #F9FCF9;
+    --gallery-color: #F1F6FF;
+    --join-color: #F7F6F2;
+    --primary-color: #000;
+    --heading-font: 1.5rem;
+    --text-font: 1rem;
+    --span-font: 0.8rem;
+    --border-radius: 15px;
+    --card-member: #F5F7F8ff;
+}
+
+body {
+    background-color: var(--main-color);
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: var(--main-color);
+    padding: 0px 40px 0px 40px;
+    text-transform: capitalize;
+    z-index: 1000;
+    /* box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: 1.5px solid var(--primary-color);
+}
+
+
+
+.fitur>a:hover {
+    border-bottom: 1px solid #000;
+}
+
+.fitur>a {
+    font-family: var(--main-font);
+    text-transform: capitalize;
+    margin-right: 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-login:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+.img-profile{
+    border-radius: 50%;
+    overflow: hidden;
+    -webkit-border-radius: 50;
+    -moz-border-radius: 50;
+    -ms-border-radius: 50;
+    -o-border-radius: 50;
+    border: 2px solid var(--primary-color);
+}
+.btn-login {
+    font-family: var(--main-font);
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+/* HEADER END */
+.event-con {
+    padding: 40px 40px 10px 40px;
+    background-color: var(--main-color);
+}
+
+.home {
+    padding: 40px 40px 10px 40px;
+    background-color: var(--main-color);
+
+}
+
+.card > img {
+    height: 60%;
+    padding: 30px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.container{
+    margin-top: 30px;
+}
+

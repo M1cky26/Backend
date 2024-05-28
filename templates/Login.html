@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHP | Login</title>
+
+        <!-- ICON  -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='image/logo-top.png') }}" type="image/x-icon">
+        <link rel="icon" href="{{ url_for('static', filename='image/logo-top.png') }}" type="image/x-icon">
+    
+
+    <!-- CSS  jQuery -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/login-register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+</head>
+
+
+<body>
+    <form action="/login" method="POST" class="login-container">
+        <img src="../static/image/logo.png" alt="" style="max-width: 75px; margin: 20px;">
+
+        <!-- Tambahkan flash message di sini -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+            <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+            <label for="floatingPassword">Password</label>
+        </div>
+
+        <button type="submit" class="btn-regis btn-outline-dark">Login</button>
+
+        <span class="flex-row">Don't have an account?<a href="/registrasi">Register</a></span>
+
+    </form>
+
+</body>
+
+</html>

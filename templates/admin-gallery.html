@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin |Gallery</title>
+
+
+    <!-- ICON  -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/logo-top.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='image/logo-top.png') }}" type="image/x-icon">
+
+    <!-- CSS    -->
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/default.css">
+    <link rel="stylesheet" href="../static/sidebar.css">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <div class="add-gambar flex-row">
+
+        <div class="sidebar">
+            <div class="logo">
+                <div class="img-logo">
+                    <img src="../static/image/logo.png" alt="Logo" style="max-width: 75px;">
+                </div>
+                <div class="menu">
+                    <li  onclick="toggleColor(this)">
+                        <i class="bi bi-calendar4-event"></i>
+                        <span onclick="window.location.href='/admin'">Event</span>
+                    </li>
+                    <li  onclick="toggleColor(this)">
+                        <i class="bi bi-image"></i>
+                        <span onclick="window.location.href='/admin/gallery'">Gallery</span>
+                    </li>
+                </div>
+            </div>
+            <div class="profile flex-row">
+                <img src="../static/profile_pics/profile_placeholder.jpg" alt="Admin">
+                <p>Admin</p>
+            </div>
+        </div>
+
+        <div class="admin">
+            <div class="gallery-section" style="background-color:  #F5F7F8;">
+                <div class="container " style="width: 1050px;">
+                    <div class="fitur">
+                        <button class="btn-fitur" onclick="toggleColor(this)"><i
+                                class="bi bi-plus-circle"></i>New</button>
+                        <button class="btn-fitur" onclick="confirmDeletes()"><i class="bi bi-trash"></i>
+                            Delete</button>
+                    </div>
+                    <div class="gallery" id="gallery">
+                        <div class="add">
+                            <input type="file" id="fileInput" style="display: none;" accept="image/*">
+                            <button onclick="openFileInput()">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- UNTUK MENAMPILKAN GAMBAR YANG DITERIMA DARI SERVER -->
+                        {% for file in gallery %}
+                        <div class="image">
+                            <img src="{{ url_for('static', filename=file.filename.split('static/')[1]) }}" alt="Image">
+                            <button class="btn-hps" onclick="confirmDelete('{{ file.filename }}')"><i
+                                    class="fas fa-trash"></i></button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openFileInput() {
+            document.getElementById('fileInput').click();
+        }
+
+
+        // UNTUK MENGIRIMKAN FILE YANG DITERIMA KE SERVER
+        function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/admin/gallery', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    window.location.reload();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        document.getElementById('fileInput').addEventListener('change', function () {
+            uploadFile();
+        });
+
+        function toggleColor(btn) {
+            btn.classList.toggle("clicked");
+        }
+
+        // UNTUK MENGHAPUS GAMBAR
+        function confirmDelete(filename) {
+            if (confirm("Apakah Anda yakin ingin menghapus gambar ini?")) {
+                deleteImage(filename);
+            }
+        }
+
+        function deleteImage(filename) {
+            fetch('/admin/gallery/delete/image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ filename: filename })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert("File deleted successfully");
+                        window.location.reload();
+                    } else {
+                        alert("Failed to delete file");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("An error occurred while deleting the file");
+                });
+        }
+
+
+        function confirmDeletes() {
+            if (confirm("Are you sure you want to delete all files?")) {
+                deleteAllFiles();
+            }
+        }
+
+        function deleteAllFiles() {
+            $.ajax({
+                url: '/admin/gallery/delete',
+                type: 'POST',
+                contentType: 'application/json',
+                success: function (data) {
+                    alert(data.message);
+                    window.location.reload();
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.error('Error:', errorThrown);
+                    alert("An error occurred while deleting files");
+                }
+            });
+        }
+        function toggleColor(btn) {
+            btn.classList.toggle("clicked");
+        }
+    </script>
+</body>
+
+</html>

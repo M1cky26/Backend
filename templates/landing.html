@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHP | Landingpage</title>
+
+    <!-- ICON  -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/logo-top.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='image/logo-top.png') }}" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/default.css">
+    <link rel="stylesheet" href="../static/style.css">
+
+
+    <!-- BOOSTSRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--   SWIPER JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+    <section id="header">
+        <div class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="../static/image/logo.png" alt="" class="logo-img" style="max-width: 75px;">
+                </div>
+
+                <div class="fitur">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#member">Member</a>
+                    <a href="#event">Events</a>
+                    <a href="#gallery">Gallery</a>
+                </div>
+
+                <div class="login">
+                    <button type="button" class="btn-login" onclick="window.location.href='/login'">Login</button>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section id="home">
+        <div class="home">
+            <div class="container">
+                <div class="banner flex-row">
+                    <img src="../static/image/banner2.jpg" alt="" class="banner-img">
+                </div>
+                <h1 class="title">Mondok Humplans</h1>
+                <!-- <div class="medsos">
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-twitter-x"></i>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about">
+            <div class="container">
+                <h1 class="subtitle">tentang Kami</h1>
+                <div class="clearfix flex-row">
+                    <p class="desc">Komunitas kami terbentuk dari tahun 2018, yang bermula dari ikatan pertemanan yang
+                        erat dan terus berkembang hingga saat ini. Dikenal dengan nama Mondok Hum Plans, nama kami
+                        terinspirasi oleh kebiasaan para anggota yang sering menginap di rumah seorang teman yang
+                        memiliki julukan "Plans". "Mondok" berasal dari bahasa Jawa yang berarti menginap atau tidur,
+                        "Hum" merupakan singkatan dari "home", dan "Plans" adalah nama salah satu anggota yang menjadi
+                        cikal bakal nama komunitas kami.</p>
+                    <div class="left-img"><img src="../static/image/about.jpg" class="img-about" alt="..."></div>
+                </div>
+                <div class="about-bottom flex-row">
+                    <div class="right-img">
+                        <img src="../static/image/about2.JPG" class="img-right" alt="...">
+                    </div>
+                    <div class="left-about">
+                        <p class="desc">Komunitas kami terbentuk dari tahun 2018, yang bermula dari ikatan pertemanan
+                            yang erat dan terus berkembang hingga saat ini. Dikenal dengan nama Mondok Hum Plans, nama
+                            kami terinspirasi oleh kebiasaan para anggota yang sering menginap di rumah seorang teman
+                            yang memiliki julukan "Plans". "Mondok" berasal dari bahasa Jawa yang berarti menginap atau
+                            tidur, "Hum" merupakan singkatan dari "home", dan "Plans" adalah nama salah satu anggota
+                            yang menjadi cikal bakal nama komunitas kami.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="tujuan">
+        <div class="container flex-wrap">
+            <div class="card card-1 flex-col">
+                <img src="../static/image/community.png" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                    <h5 class="subtitle">meningkatkan Solidaritas</h5>
+                    <p class="desc">Komunitas ini tidak hanya berfungsi sebagai tempat pembelajaran dan pertumbuhan
+                        pribadi, tetapi juga sebagai sarana untuk memperkuat solidaritas di antara anggota</p>
+                </div>
+            </div>
+            <div class="card card-2 flex-col">
+                <img src="../static/image/tujuan2.png" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                    <h5 class="subtitle">Sharing Skill dan Kreativitas</h5>
+                    <p class="desc">Komunitas ini memberikan kesempatan bagi anggotanya untuk berbagi berbagai hal, baik
+                        itu skill maupun kreativitas, sehingga setiap anggota dapat saling belajar dan mengembangkan
+                        diri.</p>
+                </div>
+            </div>
+            <div class="card card-3 flex-col">
+                <img src="../static/image/tujuan3.png" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                    <h5 class="subtitle">Tempat Belajar dan Berkembang</h5>
+                    <p class="desc">Komunitas ini menyediakan lingkungan yang mendukung untuk belajar dan berkembang
+                        bagi anggotanya. Mereka dapat belajar dari pengalaman dan pengetahuan yang dimiliki oleh anggota
+                        lainnya.</p>
+                </div>
+            </div>
+            <div class="card card-4 flex-col">
+                <img src="../static/image/tujuan4.png" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                    <h5 class="subtitle">Menyediakan Sumber Inspirasi</h5>
+                    <p class="desc">Komunitas ini bertujuan untuk mendorong inovasi dan kreativitas di antara
+                        anggotanya, sehingga setiap individu merasa didorong untuk berkontribusi dengan ide-ide baru dan
+                        solusi kreatif.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="event">
+        <div class="event">
+            <div class="container">
+                <h1 class="subtitle">acara mendatang</h1>
+                <div class="col flex-col ">
+                    {% for upcoming_event in upcoming_event%}
+                    <div class="card card-event mb-3">
+                        <img src="{{upcoming_event.image}}" class="object-fit-xl-contain border rounded" alt="...">
+                        <div class="card-body-event">
+                            <h5 class="subtitle">{{upcoming_event.title}}</h5>
+                            <p class="text">{{upcoming_event.desc}}</p>
+                            <a href="/event" class="desc">Read more</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <h1 class="subtitle">acara terdahulu</h1>
+                <div class="container">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            {% for past_events in past_events %}
+                            <div class="swiper-slide">
+                                <div class="card event-bottom" style="width: 18rem;">
+                                    <img src="{{past_events.image}}" class="img-event" alt="...">
+                                    <div class="card-body flex-row">
+                                        <div class="left-event">
+                                            <h3 class="title">{{past_events.date}}</h3>
+                                        </div>
+                                        <div class="right">
+                                            <h4 class="subtitle">{{past_events.title}}</h4>
+                                            <p class="desc">{{past_events.desc}}</p>
+                                            <span style="color: lightslategray;">{{past_events.locate}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="member">
+        <div class="member">
+            <div class="container">
+                <h1 class="subtitle">struktur Organisasi</h1>
+                <div class="top-struktur flex-wrap" style="margin-top: 40px;">
+                    <div class="card-struktur" style="width: 13rem;">
+                        <img src="../static/image/profile.jpg" class="img-struktur" alt="...">
+                        <div class="card-body ">
+                            <h5 class="title">Nama</h5>
+                            <h2 class="subtitle">Bendahara</h2>
+                        </div>
+                    </div>
+
+                    <div class="card-struktur2" style="width: 13rem;">
+                        <img src="../static/image/profile.jpg" class="img-struktur" alt="...">
+                        <div class="card-body">
+                            <h5 class="title">Nama</h5>
+                            <h2 class="subtitle">Ketua</h2>
+                        </div>
+                    </div>
+
+                    <div class="card-struktur" style="width: 13rem;">
+                        <img src="../static/image/profile.jpg" class="img-struktur" alt="...">
+                        <div class="card-body">
+                            <h5 class="title">Nama</h5>
+                            <h2 class="subtitle">Sekertaris </h2>
+                            <!-- <div class="medsos">
+                                <i class="bi bi-instagram"></i>
+                                <i class="bi bi-twitter-x"></i>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container card-member">
+                <h1 class="subtitle">Anggota</h1>
+                <div class="flex-wrap">
+                    {% for user_info in all_users %}
+                    <div class="card-mem" style="width: 12rem;">
+                        <img src="{{ url_for('static', filename=user_info.profile_pic_real) }}" class="img-member"
+                            alt="...">
+                        <div class="card-body flex-col">
+                            <h2 class="subtitle">{{ user_info.profile_name}}</h2>
+                            <h2 class="subtitle">member</h2>
+                            <p class="desc"><a href="/bio/{{ user_info.username }}">bio</a></p>
+                            <!-- Perhatikan penambahan tanda "/" di sini -->
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery">
+        <div class="gallery-section">
+            <div class="container">
+                <h1 class="subtitle flex-row">Gallery</h1>
+                <div class="gallery">
+                    {% for file in gallery %}
+                    <div class="image">
+                        <img src="{{ url_for('static', filename=file.filename.split('static/')[1]) }}" alt="Image">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3 class="desc" onclick="window.location.href='/gallery'">see more <i class="bi bi-arrow-right"></i>
+            </h3>
+        </div>
+    </section>
+
+    <section id="join">
+        <div class="join">
+            <div class="container flex-col">
+                <h1 class="title">JOIN KOMUNITAS KAMI</h1>
+                <h4 class="subtitle">ayo bergabung! bersama, kita bisa saling mendukung dan tumbuh bersama.</h4>
+                <button type="button" class="btn-login" onclick="window.location.href='/registrasi'">Gabung</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="footer">
+        <footer>
+            <div class="footer-top flex-row">
+                <div class="logo">
+                    <img src="../static/image/logo.png" alt="" class="logo-img" width="100">
+                </div>
+
+                <div class="fitur flex-col">
+                    <h1 class="title">Quick links</h1>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#member">Member</a>
+                    <a href="#event">Events</a>
+                    <a href="#gallery">Gallery</a>
+                </div>
+                <div class="medsos">
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-twitter-x"></i>
+                </div>
+            </div>
+            <p>Copyright © 2024 - MHP</p>
+        </footer>
+    </section>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 3,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

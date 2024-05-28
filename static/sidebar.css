@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --main-font: 'Familjen Grotesk', sans-serif;
+    --main-color: #F5F7F8;
+    --fitur-color: #FFFEFE;
+    --home-color: #F7F6F2;
+    --member-color: #F9F5F2ff;
+    --event-color: #F9FCF9;
+    --gallery-color: #F1F6FF;
+    --join-color: #F7F6F2;
+    --primary-color: #000;
+    --heading-font: 1.5rem;
+    --text-font: 1rem;
+    --span-font: 0.8rem;
+    --border-radius: 15px;
+    --card-member: #F5F7F8ff;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 140px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #F5F7F8;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.img-logo {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    margin: 20px 0;
+
+}
+
+.menu>li>i {
+    font-weight: bold;
+}
+
+.menu li.clicked{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.menu li {
+    color: black;
+    list-style: none;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 16px;
+    cursor: pointer;
+}
+
+
+.profile {
+
+    margin-bottom: 20px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.admin>.gallery-section {
+    border: none;
+    margin-top: 0;
+    margin-left: 160px;
+}
+
+.fitur {
+    text-align: start;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+.btn-fitur {
+    font-family: var(--main-font);
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.btn-fitur.clicked {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.add {
+    max-width: 350px;
+    height: 190px;
+    border: 2px dashed black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add-gambar {
+    align-content: baseline;
+    background-color:  #F5F7F8;
+}
+.add button {
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 16px;
+}

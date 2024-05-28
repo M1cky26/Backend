@@ -1,0 +1,61 @@
+    .body {
+        font-family: 'Familjen Grotesk', sans-serif;
+        background-color: var(--main-color);
+    }
+
+    .regis-container {
+        text-align: center;
+        width: 400px;
+        margin: 50px auto;
+        background-color: #fffefe;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .regis-container>button {
+        width: 360px;
+        height: 50px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        background-color: transparent;
+    }
+
+    .regis-container>span>a:hover {
+        cursor: pointer;
+    }
+
+    .regis-container>span>a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .login-container {
+        text-align: center;
+        width: 400px;
+        margin: 50px auto;
+        background-color: #fffefe;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container>button {
+        width: 360px;
+        height: 50px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        background-color: transparent;
+    }
+
+    .login-container>span>a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    .login-container>span>a:hover {
+        cursor: pointer;
+    }

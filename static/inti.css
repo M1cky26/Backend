@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --main-font: 'Familjen Grotesk', sans-serif;
+    --main-color: #F5F7F8;
+    --login-color: #FFFEFE;
+    --home-color: #F7F6F2;
+    --member-color: #F9F5F2ff;
+    --event-color: #F9FCF9;
+    --gallery-color: #F1F6FF;
+    --join-color: #F7F6F2;
+    --primary-color: #000;
+    --heading-font: 1.5rem;
+    --text-font: 1rem;
+    --span-font: 0.8rem;
+    --border-radius: 15px;
+    --card-member: #F5F7F8ff;
+}
+.body {
+    margin-top: 15px;
+    font-family: var(--main-font);
+    height: auto;
+}
+
+.section {
+    margin-left: 15px;
+}
+
+.container {
+    margin: 15px;
+    height: auto;
+    color: var(--event-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    justify-content: flex-start;
+    color: #000;
+}
+
+.subtitle {
+    font-family: var(--main-font);
+    margin: 15px;
+    color: #000;
+}
+
+.thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin: 10px;
+}
+
+.box-thumb {
+    width: 990px;
+    height: 270px;
+    justify-content: center;
+    margin-left: 8px;
+    padding-bottom: 10px;
+
+}
+
+.box-thumb>span {
+    margin: 5px;
+}
+
+.box-text {
+    width:486px;
+    height: auto;
+    border: 2px solid var(--primary-color);
+    margin: auto;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.box-text2 {
+    width: 990px;
+    height: auto;
+    border: 2px solid var(--primary-color);
+    margin: auto;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.title-date {
+    font-family: var(--main-font);
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin-left: 17px;
+    margin-bottom: 10px;
+}
+
+.box-title {
+    font-family: var(--main-font);
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin-right: 12px;
+}
+
+.box-date {
+    font-family: var(--main-font);
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin-left: 5px;
+}
+
+.box-locat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+.box-locat>span {
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.box-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.box-desc>span {
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.button {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.tombol {
+    position: relative;
+    text-align: end;
+    padding: 10px;
+}
+
+.drop-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

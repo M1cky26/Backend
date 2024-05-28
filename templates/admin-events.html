@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHP | ADMIN</title>
+
+    <!-- ICON  -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/logo-top.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='image/logo-top.png') }}" type="image/x-icon">
+    <!-- BOOTSRTAP JQUERY -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/sidebar.css">
+    <link rel="stylesheet" href="../static/inti.css">
+</head>
+<style>
+    .img-view {
+        width: 990px;
+        height: 270px;
+        border: 2px dashed var(--primary-color);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .img-view img {
+        width: 100px;
+        margin-top: 25px;
+    }
+
+    .img-view span {
+        display: block;
+        font-size: 12px;
+        color: #777;
+        margin-top: 15px;
+    }
+    .profile  img{
+        width: 45%;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid black;
+    }
+    .profile{
+        justify-content: baseline;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        posting();
+        bsCustomFileInput.init();
+    })
+
+    function posting() {
+
+        let title = $("#input-title").val();
+        if (!title) {
+            return alert("Hey user,you forgot a title");
+        }
+        let date = $("#input-date").val();
+        if (!date) {
+            return alert("your forgot date?");
+        }
+        let desc = $("#input-desc").val();
+        if (!desc) {
+            return alert("your forgot description?");
+        }
+        let locate = $("#input-location").val();
+        if (!locate) {
+            return alert("your forgot location?");
+        }
+        let file = $("#input-file").prop("files")[0];
+
+        let form_event = new FormData();
+
+        form_event.append("file", file);
+        form_event.append("title", title);
+        form_event.append("date", date);
+        form_event.append("desc", desc);
+        form_event.append("locate", locate);
+
+
+        $.ajax({
+            type: ("POST"),
+            url: "/admin_event",
+            data: form_event,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                alert(response["msg"]);
+                window.location.reload();
+            }
+        });
+
+    }
+    function toggleColor(btn) {
+            btn.classList.toggle("clicked");
+        }
+</script>
+
+<body>
+    <div class="flex-row">
+        <div class="sidebar">
+            <div class="logo">
+                <div class="img-logo">
+                    <img src="../static/image/logo.png" alt="Logo" style="max-width: 75px;">
+                </div>
+                <div class="menu">
+                    <li  onclick="toggleColor(this)">
+                        <i class="bi bi-calendar4-event"></i>
+                        <span onclick="window.location.href='/admin'">Event</span>
+                    </li>
+                    <li  onclick="toggleColor(this)">
+                        <i class="bi bi-image"></i>
+                        <span onclick="window.location.href='/admin/gallery'">Gallery</span>
+                    </li>
+                </div>
+            </div>
+            <div class="profile flex-row">
+                <img src="../static/profile_pics/profile_placeholder.jpg" alt="Admin">
+                <p>Admin</p>
+            </div>
+        </div>
+        <div class="body" style="width: 900px;">
+            <div class="section">
+                <button type="button" class="btn btn-dark" onclick="window.location.href='/admin'"><i class="bi bi-plus-circle" ></i> New Event</button>
+                <button type="button" class="btn btn-light" style="border: 2px solid var(--primary-color); " onclick="window.location.href='/upcoming_event'"><i
+                        class="bi bi-calendar"></i> Upcoming</button>
+                <button type="button" class="btn btn-light" style="border: 2px solid var(--primary-color);" onclick="window.location.href='/past_event'"><i
+                        class="bi bi-calendar-check"></i> Past Event</button>
+            </div>
+            <div class="container" style="width: 1050px;">
+                <div class="subtitle">
+                    <h2 class="flex-col"> Create New Event</h2>
+                </div>
+                <div class="body-contain">
+                    <form id="form">
+                        <div class="thumbnail">
+                            <span>Add thumbnail</span>
+                            <div class="box-thumb">
+                                <label for="input-file" id="drop-area" class="drop-area">
+                                    <input type="file" accept="image/*" id="input-file" class="input-file" hidden>
+                                    <div class="img-view">
+                                        <img src="../static/image/upload.jpg">
+                                        <p>Click here to upload image</p>
+                                        <span>Upload any image from destop</span>
+                                    </div>
+                                </label>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="title-date">
+                            <div class="box-title">
+                                <span>
+                                    Add Title
+                                </span>
+                                <input type="text" class="box-text" id="input-title" placeholder="Add your title">
+                            </div>
+                            <div class="box-date" style="margin-left: 5px;">
+                                <span>
+                                    Add Date
+                                </span>
+                                <input type="date" class="box-text" id="input-date">
+                            </div>
+                        </div>
+                        <div class="Description">
+                            <div class="box-desc">
+                                <span>Add Description</span>
+                                <input type="text" class="box-text2" id="input-desc" placeholder="Description">
+                            </div>
+                        </div>
+                        <div class="location">
+                            <div class="box-locat">
+                                <span>Add Locate</span>
+                                <input type="text" class="box-text2" id="input-location" placeholder="location">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="tombol">
+                        <button onclick="posting()" type="button" class="btn btn-dark button">
+                            Create Event
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
